@@ -4,6 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AjustesUsuarioComponent } from './ajustes-usuario/ajustes-usuario.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';
 
 
 const pagesRoutes: Routes = [
@@ -15,6 +18,9 @@ const pagesRoutes: Routes = [
             {path: 'progress', component: ProgressComponent},
             {path: 'graficas1', component: Graficas1Component},
             {path: 'ajustes-usuario', component: AjustesUsuarioComponent},
+            {path: 'formulario', component: FormularioComponent},
+            {path: 'promesas', component: PromesasComponent},
+            {path: 'rxjs', component: RxjsComponent},
             {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         ]
     },

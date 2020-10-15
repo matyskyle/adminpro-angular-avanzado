@@ -1,0 +1,45 @@
+<form (submit)="submit()" [formGroup]="formularioRegistro">
+    <div class="form-group">
+        <label for="nombreUsuario">Nombre de usuario</label>
+        <input type="text" class="form-control" formControlName="nombreUsuario">
+        <div *ngIf="nombreUsuario.invalid && (nombreUsuario.dirty || nombreUsuario.touched)"
+            class="alert alert-danger">
+            <div *ngIf="nombreUsuario.errors.required">
+                El nombre de usuario es requerido
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="correoUsuario">Correo electronico</label>
+        <input type="email" class="form-control" formControlName="correoUsuario">
+        <div *ngIf="correoUsuario.invalid && (correoUsuario.dirty || correoUsuario.touched)"
+            class="alert alert-danger">
+            <div *ngIf="correoUsuario.errors.required">
+                El correo de usuario es requerido
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="descripcionUsuario">Descripcion de usuario (no es requerido)</label>
+        <input type="text" class="form-control" formControlName="descripcionUsuario">
+    </div>
+    <div class="form-group">
+        <label for="contrasena">Contraseña</label>
+        <input type="password" class="form-control" formControlName="contrasena">
+        <div *ngIf="contrasenaUsuario.invalid && (contrasenaUsuario.dirty || contrasenaUsuario.touched)"
+            class="alert alert-danger">
+            <div *ngIf="contrasenaUsuario.errors.passwordValidation">
+                {{contrasenaUsuario.errors.passwordValidation.message}}
+            </div>
+            <div *ngIf="contrasenaUsuario.errors.required">
+                La contraseña es requerida
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="checkbox" id="confirmacion" class="form-check-input" formControlName="confirmacion">
+        <label class="form-check-label" for="confirmacion">Leí y confirmo las condiciones y reglas.</label>
+    </div>
+    <button type="submit" class="btn btn-sucsess" [disabled]="formularioRegistro.invalid">Enviar</button>
+    <button type="button" class="btn btn-default" (click)="Limpiar()">Limpiar</button>
+</form>

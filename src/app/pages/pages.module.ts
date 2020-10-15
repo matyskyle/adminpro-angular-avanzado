@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AjustesUsuarioComponent } from './ajustes-usuario/ajustes-usuario.component';
+import { FormularioComponent } from './formulario/formulario.component'
 //RUTAS SHARED
 import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
@@ -19,6 +20,9 @@ import { platformBrowser } from '@angular/platform-browser';
 
 //SERVICIOS
 import { ServiceModule } from '../services/service.module';
+import { PasswordValidationDirective } from './formulario/validations/password-validation.directive';
+import { PromesasComponent } from './promesas/promesas.component';
+import { RxjsComponent } from './rxjs/rxjs.component';;
 
 @NgModule({
     declarations:[
@@ -29,6 +33,10 @@ import { ServiceModule } from '../services/service.module';
         IncrementadorComponent,
         GraficoDonaComponent,
         AjustesUsuarioComponent,
+        FormularioComponent,
+        PasswordValidationDirective,
+        PromesasComponent,
+        RxjsComponent,
     ],
     exports:[
         DashboardComponent,
@@ -39,6 +47,7 @@ import { ServiceModule } from '../services/service.module';
       SharedModule,
       PAGES_ROUTES,
       FormsModule,
+      ReactiveFormsModule,
       ChartsModule,
       BrowserModule,
       ServiceModule
