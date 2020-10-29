@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 //SERVICIOS
 import { ServiceModule } from './services/service.module';
 
@@ -25,7 +25,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     APP_ROUTES,
     PagesModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [
     ServiceModule

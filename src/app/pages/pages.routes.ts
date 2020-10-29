@@ -7,12 +7,14 @@ import { AjustesUsuarioComponent } from './ajustes-usuario/ajustes-usuario.compo
 import { FormularioComponent } from './formulario/formulario.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { LoginGuardGuard } from '../services/service.index';
 
 
 const pagesRoutes: Routes = [
     {
         path: '',
         component: PagesComponent,
+        canActivate:[ LoginGuardGuard ],
         children:[
             {path: 'dashboard', component: DashboardComponent},
             {path: 'progress', component: ProgressComponent},
