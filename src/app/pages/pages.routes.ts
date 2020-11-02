@@ -8,6 +8,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { LoginGuardGuard } from '../services/service.index';
+import { ProfileComponent } from './profile/profile.component';
 
 
 const pagesRoutes: Routes = [
@@ -23,6 +24,7 @@ const pagesRoutes: Routes = [
             {path: 'formulario', component: FormularioComponent},
             {path: 'promesas', component: PromesasComponent},
             {path: 'rxjs', component: RxjsComponent},
+            {path: 'perfil', component: ProfileComponent},
             {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
         ]
     },

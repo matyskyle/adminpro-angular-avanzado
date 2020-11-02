@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChartsModule } from 'ng2-charts';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 //RUTAS PAGES
 import { PagesComponent } from './pages.component';
@@ -16,13 +17,17 @@ import { PAGES_ROUTES } from './pages.routes';
 //RUTAS COMPONENTS
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
-import { platformBrowser } from '@angular/platform-browser';
 
 //SERVICIOS
 import { ServiceModule } from '../services/service.module';
 import { PasswordValidationDirective } from './formulario/validations/password-validation.directive';
 import { PromesasComponent } from './promesas/promesas.component';
-import { RxjsComponent } from './rxjs/rxjs.component';;
+import { RxjsComponent } from './rxjs/rxjs.component';
+
+//PIPES
+import { PipesModule } from '../pipes/pipes.module';
+import { ProfileComponent } from './profile/profile.component';
+
 
 @NgModule({
     declarations:[
@@ -37,6 +42,7 @@ import { RxjsComponent } from './rxjs/rxjs.component';;
         PasswordValidationDirective,
         PromesasComponent,
         RxjsComponent,
+        ProfileComponent,
     ],
     exports:[
         DashboardComponent,
@@ -44,13 +50,15 @@ import { RxjsComponent } from './rxjs/rxjs.component';;
         Graficas1Component,
     ],
     imports: [
+      CommonModule,
       SharedModule,
       PAGES_ROUTES,
       FormsModule,
       ReactiveFormsModule,
       ChartsModule,
       BrowserModule,
-      ServiceModule
+      ServiceModule,
+      PipesModule
     ]
 })
 export class PagesModule {}
