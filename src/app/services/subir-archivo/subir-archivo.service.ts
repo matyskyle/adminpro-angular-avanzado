@@ -13,7 +13,7 @@ export class SubirArchivoService {
     let formData = new FormData();
     let xhr = new XMLHttpRequest();
 
-    formData.append( 'imagen', archivo, archivo.name );
+    formData.append( 'img', archivo, archivo.name );
 
     return new Promise( (resolve, reject) => {
 

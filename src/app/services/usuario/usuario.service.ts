@@ -102,10 +102,9 @@ export class UsuarioService {
 
   //ACTUALIZAR USUARIO
   actualizarUsuario( usuario: Usuario ){
-    let url = URL_SERVICIOS + '/usuario/' + usuario._id;
-    url += '?token=' + this.token;
+    let url = URL_SERVICIOS + '/usuario/' + usuario._id + '?token=' + this.token;
 
-    return this.http.put( url, usuario ).pipe( map( (resp: any) => {
+    return this.http.put( url, usuario).pipe( map( (resp: any) => {
 
       let usuarioDB: Usuario = resp.usuario;
 
@@ -113,6 +112,7 @@ export class UsuarioService {
       swal("Actualizado Exitosa!", usuario.nombre, "success");
       return true;
     }));
+
   }
 
   cambiarImagen( archivo: File, id: string){
