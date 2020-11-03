@@ -11,12 +11,14 @@ import { ProgressComponent } from './progress/progress.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
 import { AjustesUsuarioComponent } from './ajustes-usuario/ajustes-usuario.component';
 import { FormularioComponent } from './formulario/formulario.component'
+import { UsuariosComponent } from './usuarios/usuarios.component';
 //RUTAS SHARED
 import { SharedModule } from '../shared/shared.module';
 import { PAGES_ROUTES } from './pages.routes';
 //RUTAS COMPONENTS
 import { IncrementadorComponent } from '../components/incrementador/incrementador.component';
 import { GraficoDonaComponent } from '../components/grafico-dona/grafico-dona.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 //SERVICIOS
 import { ServiceModule } from '../services/service.module';
@@ -43,6 +45,8 @@ import { ProfileComponent } from './profile/profile.component';
         PromesasComponent,
         RxjsComponent,
         ProfileComponent,
+        UsuariosComponent,
+        ModalUploadComponent
     ],
     exports:[
         DashboardComponent,
