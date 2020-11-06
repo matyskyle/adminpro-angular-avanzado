@@ -17,7 +17,6 @@ export class LoginGuardGuard implements CanActivate {
       return true;
     } else{
       this.router.navigate(['/login']);
-      console.log('Bloqueado por el Guard');
       return false;
     }
   }

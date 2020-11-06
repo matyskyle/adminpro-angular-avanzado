@@ -48,7 +48,6 @@ export class UsuariosComponent implements OnInit {
     this._usuarioService.cargarUsuario( this.desde ).subscribe(
       ( resp: any ) => {
         
-        console.log( resp );
         this.totalRegistros = resp.total;
         this.usuarios = resp.usuarios;
 
@@ -59,7 +58,6 @@ export class UsuariosComponent implements OnInit {
   cambiarPaginacion( valor: number ){
 
     let desde = this.desde + valor;
-    console.log( desde );
 
     if ( desde >= this.totalRegistros || desde < 0) {
       return;
@@ -95,11 +93,9 @@ export class UsuariosComponent implements OnInit {
         dangerMode: true,
       }).then( borrar => {
   
-        console.log( borrar );
         if ( borrar ) {
           this._usuarioService.borrarUsuario( usuario._id ).subscribe(
             borrado => {
-              console.log( borrado );
               this.desde = 0;
               this.cargarUsuarios();
             });

@@ -16,9 +16,7 @@ export class ModalUploadComponent implements OnInit {
 
   constructor( 
     public _subirArchivoService: SubirArchivoService,
-    public _modalUploadService: ModalUploadService ) {
-      console.log('hola mundo');
-    }
+    public _modalUploadService: ModalUploadService ) {}
 
   ngOnInit(): void {
   }
@@ -55,8 +53,7 @@ export class ModalUploadComponent implements OnInit {
 
     this._subirArchivoService.subirArchivo( this.imagenSubir, this._modalUploadService.tipo, this._modalUploadService.id )
         .then( resp => {
-
-          console.log( resp );
+          
           this._modalUploadService.notificacion.emit( resp );
           this.cerrarModal();
 
