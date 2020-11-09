@@ -37,3 +37,25 @@
 .oculto{
     display: none;
 }
+
+.my-custom-scrollbar {
+    position: relative;
+    max-height: 500px;
+    overflow: auto;
+}
+.table-wrapper-scroll-y {
+    display: block;
+}
+
+/* CAMBIO DE TAMAÑO */
+@media (max-width: 425px){
+    
+    .my-custom-scrollbar {
+        position: relative;
+        height: 350px;
+        overflow: auto;
+    }
+    .table-wrapper-scroll-y {
+        display: block;
+    }
+}

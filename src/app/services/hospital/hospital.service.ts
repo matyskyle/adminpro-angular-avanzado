@@ -48,7 +48,11 @@ export class HospitalService {
   crearHospital( nombre: string ){
 
     let url = URL_SERVICIOS + '/hospital?token=' + this._usuarioService.token;
-    return this.http.post( url, { nombre } ).pipe( map( ( resp: any ) => resp.hospital ));
+    return this.http.post( url, { nombre } ).pipe( map( ( resp: any ) => { 
+      resp.hospital;
+
+      swal("Hospital creado con exito!", '', "success");
+     }));
 
   }
 
@@ -62,6 +66,10 @@ export class HospitalService {
   actualizarHospital( hospital: Hospital){
 
     let url = URL_SERVICIOS + '/hospital/' + hospital._id + '?token=' + this._usuarioService.token;
-    return this.http.put( url, hospital ).pipe( map( ( resp: any ) => resp.hospital ));
+    return this.http.put( url, hospital ).pipe( map( ( resp: any ) => { 
+      resp.hospital;
+
+      swal("Actualizado Exitosa!", hospital.nombre, "success");
+     }));
   }
 }

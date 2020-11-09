@@ -81,6 +81,10 @@ export class MedicoService {
   actualizarMedico( medico: Medico){
 
     let url = URL_SERVICIOS + '/hospital/' + medico._id + '?token=' + this._usuarioService.token;
-    return this.http.put( url, medico ).pipe( map( ( resp: any ) => resp.medico ));
+    return this.http.put( url, medico ).pipe( map( ( resp: any ) => { 
+      resp.medico;
+
+      swal("Actualizado Exitosa!", medico.nombre, "success");
+     }));
   }
 }

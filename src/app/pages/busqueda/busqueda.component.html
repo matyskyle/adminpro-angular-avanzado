@@ -1,0 +1,103 @@
+<div class="row">
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Usuarios</h4>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-hover" *ngIf="usuarios.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Foto</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let usuario of usuarios">
+                                <td><img [src]="usuario.img | imagen:'usuario'" class="img-50"></td>
+                                <td>{{ usuario.nombre }}</td>
+                                <td>
+                                    <button [routerLink]="'/usuarios'" class="btn btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-info" *ngIf="usuarios.length === 0">
+                        No hay registros
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Medicos</h4>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-hover" *ngIf="medicos.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Foto</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col" *ngIf="admin"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let medico of medicos">
+                                <td><img [src]="medico.img | imagen:'medico'" class="img-50"></td>
+                                <td>{{ medico.nombre }}</td>
+                                <td *ngIf="admin">
+                                    <button [routerLink]="['/medico', medico._id]" class="btn btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-info" *ngIf="medicos.length === 0">
+                        No hay registros
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-4">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Hospitales</h4>
+                <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                    <table class="table table-hover" *ngIf="hospitales.length > 0">
+                        <thead>
+                            <tr>
+                                <th scope="col">Foto</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let hospital of hospitales">
+                                <td><img [src]="hospital.img | imagen:'hospital'" class="img-50"></td>
+                                <td>{{ hospital.nombre }}</td>
+                                <td>
+                                    <button [routerLink]="'/hospitales'" class="btn btn-primary">
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="alert alert-info" *ngIf="hospitales.length === 0">
+                        No hay registros
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
